@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-товары-e",
+  "editForm": "i-i-s-c-r-mj-товары-e",
+  "external": false,
+  "caption": "Товары",
+  "name": "IISCRMjТоварыL",
+  "className": "ТоварыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-товары",
+      "modelProjection": "ТоварыL"
+    }
+  ]
+}

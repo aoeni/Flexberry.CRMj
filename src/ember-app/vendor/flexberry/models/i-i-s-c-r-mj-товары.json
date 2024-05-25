@@ -1,0 +1,337 @@
+﻿{
+  "name": "IISCRMjТовары",
+  "modelName": "i-i-s-c-r-mj-товары",
+  "className": "Товары",
+  "nameSpace": "IIS.CRMj",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "дата",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "колич",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наименование",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "область",
+      "type": "i-i-s-c-r-mj-обл-при",
+      "flexberryType": "ОблПри",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "объем",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "преимущ",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стандарт",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "темпер",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "тип",
+      "type": "i-i-s-c-r-mj-тип-тр",
+      "flexberryType": "ТипТр",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "требования",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "цена",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудник",
+      "relatedTo": "i-i-s-c-r-mj-сотрудник",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТоварыE",
+      "modelName": "i-i-s-c-r-mj-товары",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "цена",
+          "caption": "Цена",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "тип",
+          "caption": "Тип транспорта",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "область",
+          "caption": "Область применения",
+          "hidden": false,
+          "index": 5
+        },
+        {
+          "name": "темпер",
+          "caption": "Температура",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "стандарт",
+          "caption": "Стандарт производства",
+          "hidden": false,
+          "index": 7
+        },
+        {
+          "name": "дата",
+          "caption": "Дата производства",
+          "hidden": false,
+          "index": 8
+        },
+        {
+          "name": "преимущ",
+          "caption": "Преимущества",
+          "hidden": false,
+          "index": 9
+        },
+        {
+          "name": "требования",
+          "caption": "Требования ",
+          "hidden": false,
+          "index": 10
+        },
+        {
+          "name": "колич",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 11
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 13
+            }
+          ],
+          "index": 12,
+          "type": "standard",
+          "caption": "Сотрудник",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-c-r-mj-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ТоварыL",
+      "modelName": "i-i-s-c-r-mj-товары",
+      "attrs": [
+        {
+          "name": "темпер",
+          "caption": "Темпер",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "стандарт",
+          "caption": "Стандарт",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "дата",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "преимущ",
+          "caption": "Преимущ",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "требования",
+          "caption": "Требования",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "цена",
+          "caption": "Цена",
+          "hidden": false,
+          "index": 5
+        },
+        {
+          "name": "колич",
+          "caption": "Колич",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 7
+        },
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 8
+        },
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 9
+        },
+        {
+          "name": "область",
+          "caption": "Область",
+          "hidden": false,
+          "index": 10
+        },
+        {
+          "name": "тип",
+          "caption": "Тип",
+          "hidden": false,
+          "index": 11
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 12
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-c-r-mj-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

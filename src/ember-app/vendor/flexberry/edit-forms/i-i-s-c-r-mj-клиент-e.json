@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ГруппаКлиент",
+      "projection": "ГруппаКлиентL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Клиент",
+  "name": "IISCRMjКлиентE",
+  "className": "КлиентE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-клиент",
+      "modelProjection": "КлиентE"
+    }
+  ]
+}

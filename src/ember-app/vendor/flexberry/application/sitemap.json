@@ -1,0 +1,71 @@
+﻿{
+  "applicationCaption": "2",
+  "applicationTitle": "2",
+  "items": [
+    {
+      "link": null,
+      "menuName": "c-r-m",
+      "caption": "CRM",
+      "title": "CRM",
+      "children": [
+        {
+          "link": "i-i-s-c-r-mj-заявка-l",
+          "menuName": null,
+          "caption": "Заявка",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-товары-l",
+          "menuName": null,
+          "caption": "Товары",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-сделка-l",
+          "menuName": null,
+          "caption": "Сделка",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-уведомление-l",
+          "menuName": null,
+          "caption": "Уведомление",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-сотрудник-l",
+          "menuName": null,
+          "caption": "Сотрудник",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-клиент-l",
+          "menuName": null,
+          "caption": "Клиент",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-группа-клиент-l",
+          "menuName": null,
+          "caption": "Группа клиент",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-c-r-mj-событие-l",
+          "menuName": null,
+          "caption": "Событие",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

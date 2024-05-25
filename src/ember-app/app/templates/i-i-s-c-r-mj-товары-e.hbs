@@ -1,0 +1,166 @@
+<h3 class="ui header">{{t "forms.i-i-s-c-r-mj-товары-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.iD
+      class=(if (v-get validationModel "iD" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.iD-caption")
+      data-test-i-i-s-c-r-mj-товары-e-iD=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "iD" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.наименование
+      class=(if (v-get validationModel "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.наименование-caption")
+      data-test-i-i-s-c-r-mj-товары-e-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "наименование" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.цена
+      class=(if (v-get validationModel "цена" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.цена-caption")
+      data-test-i-i-s-c-r-mj-товары-e-цена=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "цена" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.объем
+      class=(if (v-get validationModel "объем" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.объем-caption")
+      data-test-i-i-s-c-r-mj-товары-e-объем=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "объем" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-c-r-mj-товары-e-тип="true">
+    <label>{{t "forms.i-i-s-c-r-mj-товары-e.тип-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-c-r-mj-тип-тр")
+      value=model.тип
+      class=(if (v-get validationModel "тип" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "тип" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-c-r-mj-товары-e-область="true">
+    <label>{{t "forms.i-i-s-c-r-mj-товары-e.область-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-c-r-mj-обл-при")
+      value=model.область
+      class=(if (v-get validationModel "область" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "область" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.темпер
+      class=(if (v-get validationModel "темпер" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.темпер-caption")
+      data-test-i-i-s-c-r-mj-товары-e-темпер=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "темпер" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.стандарт
+      class=(if (v-get validationModel "стандарт" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.стандарт-caption")
+      data-test-i-i-s-c-r-mj-товары-e-стандарт=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "стандарт" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-товары-e.дата-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.дата
+      class=(if (v-get validationModel "дата" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-товары-e-дата=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "дата" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.преимущ
+      class=(if (v-get validationModel "преимущ" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.преимущ-caption")
+      data-test-i-i-s-c-r-mj-товары-e-преимущ=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "преимущ" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.требования
+      class=(if (v-get validationModel "требования" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.требования-caption")
+      data-test-i-i-s-c-r-mj-товары-e-требования=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "требования" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.колич
+      class=(if (v-get validationModel "колич" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-товары-e.колич-caption")
+      data-test-i-i-s-c-r-mj-товары-e-колич=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "колич" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-товары-e.сотрудник-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.сотрудник
+      displayAttributeName="фИО"
+      autocomplete=true
+      relationName="сотрудник"
+      projection="СотрудникL"
+      title=(t "forms.i-i-s-c-r-mj-товары-e.сотрудник-caption")
+      readonly=readonly
+      componentName="сотрудникLookup"
+      class=(if (v-get validationModel "сотрудник" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-товары-e-сотрудник=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сотрудник" "message")}}
+  </div>
+</form>

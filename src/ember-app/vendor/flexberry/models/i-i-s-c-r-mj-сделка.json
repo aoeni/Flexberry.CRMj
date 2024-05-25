@@ -1,0 +1,233 @@
+﻿{
+  "name": "IISCRMjСделка",
+  "modelName": "i-i-s-c-r-mj-сделка",
+  "className": "Сделка",
+  "nameSpace": "IIS.CRMj",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "статусС",
+      "type": "i-i-s-c-r-mj-статус",
+      "flexberryType": "Статус",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "заявка",
+      "relatedTo": "i-i-s-c-r-mj-заявка",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "СделкаE",
+      "modelName": "i-i-s-c-r-mj-сделка",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "статусС",
+          "caption": "Статус сделки",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ДатаСоздания",
+          "lookupValueField": "датаСоздания",
+          "relationName": "Заявка",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Заявка.Клиент",
+              "belongsTo": [],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "iD",
+                  "caption": "ID клиента",
+                  "hidden": false,
+                  "index": 4
+                },
+                {
+                  "name": "фИО",
+                  "caption": "ФИО клиента",
+                  "hidden": false,
+                  "index": 5
+                },
+                {
+                  "name": "телефон",
+                  "caption": "Телефон клиента",
+                  "hidden": false,
+                  "index": 6
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "клиент",
+              "relatedTo": "i-i-s-c-r-mj-клиент",
+              "inverse": null
+            },
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Заявка.Сотрудник",
+              "belongsTo": [],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "фИО",
+                  "caption": "ФИО сотрудника",
+                  "hidden": false,
+                  "index": 7
+                },
+                {
+                  "name": "iD",
+                  "caption": "ID сотрудника",
+                  "hidden": false,
+                  "index": 8
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "сотрудник",
+              "relatedTo": "i-i-s-c-r-mj-сотрудник",
+              "inverse": null
+            },
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Заявка.Товары",
+              "belongsTo": [],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "наименование",
+                  "caption": "Наименование",
+                  "hidden": false,
+                  "index": 9
+                },
+                {
+                  "name": "объем",
+                  "caption": "Объем",
+                  "hidden": false,
+                  "index": 11
+                },
+                {
+                  "name": "цена",
+                  "caption": "Цена",
+                  "hidden": false,
+                  "index": 12
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "товары",
+              "relatedTo": "i-i-s-c-r-mj-товары",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "датаСоздания",
+              "caption": "Дата создания заявки",
+              "hidden": true,
+              "index": 3
+            },
+            {
+              "name": "колВо",
+              "caption": "Количество",
+              "hidden": false,
+              "index": 10
+            },
+            {
+              "name": "стоимость",
+              "caption": "Стоимость",
+              "hidden": false,
+              "index": 13
+            }
+          ],
+          "index": 2,
+          "type": "standard",
+          "caption": "Заявка",
+          "name": "заявка",
+          "relatedTo": "i-i-s-c-r-mj-заявка",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "СделкаL",
+      "modelName": "i-i-s-c-r-mj-сделка",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "статусС",
+          "caption": "Статус С",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Заявка",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "датаСоздания",
+              "caption": "Дата создания",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Дата создания",
+          "name": "заявка",
+          "relatedTo": "i-i-s-c-r-mj-заявка",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

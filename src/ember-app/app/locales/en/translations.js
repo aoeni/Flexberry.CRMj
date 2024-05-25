@@ -1,0 +1,174 @@
+import $ from 'jquery';
+import EmberFlexberryTranslations from 'ember-flexberry/locales/en/translations';
+
+import IISCRMjГруппаКлиентLForm from './forms/i-i-s-c-r-mj-группа-клиент-l';
+import IISCRMjЗаявкаLForm from './forms/i-i-s-c-r-mj-заявка-l';
+import IISCRMjКлиентLForm from './forms/i-i-s-c-r-mj-клиент-l';
+import IISCRMjСделкаLForm from './forms/i-i-s-c-r-mj-сделка-l';
+import IISCRMjСобытиеLForm from './forms/i-i-s-c-r-mj-событие-l';
+import IISCRMjСотрудникLForm from './forms/i-i-s-c-r-mj-сотрудник-l';
+import IISCRMjТоварыLForm from './forms/i-i-s-c-r-mj-товары-l';
+import IISCRMjУведомлениеLForm from './forms/i-i-s-c-r-mj-уведомление-l';
+import IISCRMjГруппаКлиентEForm from './forms/i-i-s-c-r-mj-группа-клиент-e';
+import IISCRMjЗаявкаEForm from './forms/i-i-s-c-r-mj-заявка-e';
+import IISCRMjКлиентEForm from './forms/i-i-s-c-r-mj-клиент-e';
+import IISCRMjСделкаEForm from './forms/i-i-s-c-r-mj-сделка-e';
+import IISCRMjСобытиеEForm from './forms/i-i-s-c-r-mj-событие-e';
+import IISCRMjСотрудникEForm from './forms/i-i-s-c-r-mj-сотрудник-e';
+import IISCRMjТоварыEForm from './forms/i-i-s-c-r-mj-товары-e';
+import IISCRMjУведомлениеEForm from './forms/i-i-s-c-r-mj-уведомление-e';
+import IISCRMjГруппаКлиентModel from './models/i-i-s-c-r-mj-группа-клиент';
+import IISCRMjЗаявкаModel from './models/i-i-s-c-r-mj-заявка';
+import IISCRMjКлиентModel from './models/i-i-s-c-r-mj-клиент';
+import IISCRMjСделкаModel from './models/i-i-s-c-r-mj-сделка';
+import IISCRMjСобытиеModel from './models/i-i-s-c-r-mj-событие';
+import IISCRMjСотрудникModel from './models/i-i-s-c-r-mj-сотрудник';
+import IISCRMjТоварыModel from './models/i-i-s-c-r-mj-товары';
+import IISCRMjУведомлениеModel from './models/i-i-s-c-r-mj-уведомление';
+
+const translations = {};
+$.extend(true, translations, EmberFlexberryTranslations);
+
+$.extend(true, translations, {
+  models: {
+    'i-i-s-c-r-mj-группа-клиент': IISCRMjГруппаКлиентModel,
+    'i-i-s-c-r-mj-заявка': IISCRMjЗаявкаModel,
+    'i-i-s-c-r-mj-клиент': IISCRMjКлиентModel,
+    'i-i-s-c-r-mj-сделка': IISCRMjСделкаModel,
+    'i-i-s-c-r-mj-событие': IISCRMjСобытиеModel,
+    'i-i-s-c-r-mj-сотрудник': IISCRMjСотрудникModel,
+    'i-i-s-c-r-mj-товары': IISCRMjТоварыModel,
+    'i-i-s-c-r-mj-уведомление': IISCRMjУведомлениеModel
+  },
+
+  'application-name': '2',
+
+  forms: {
+    loading: {
+      'spinner-caption': 'Loading stuff, please wait for a moment...'
+    },
+    index: {
+      greeting: 'Welcome to ember-flexberry test stand!'
+    },
+
+    application: {
+      header: {
+        menu: {
+          'sitemap-button': {
+            title: 'Menu'
+          },
+          'user-settings-service-checkbox': {
+            caption: 'Use service to save user settings'
+          },
+          'show-menu': {
+            caption: 'Show menu'
+          },
+          'hide-menu': {
+            caption: 'Hide menu'
+          },
+          'language-dropdown': {
+            caption: 'Application language',
+            placeholder: 'Choose language'
+          }
+        },
+        login: {
+          caption: 'Login'
+        },
+        logout: {
+          caption: 'Logout'
+        }
+      },
+
+      footer: {
+        'application-name': '2',
+        'application-version': {
+          caption: 'Addon version {{version}}',
+          title: 'It is version of ember-flexberry addon, which uses in this dummy application ' +
+          '(npm version + commit sha). ' +
+          'Click to open commit on GitHub.'
+        }
+      },
+
+      sitemap: {
+        'application-name': {
+          caption: '2',
+          title: '2'
+        },
+        'application-version': {
+          caption: 'Addon version {{version}}',
+          title: 'It is version of ember-flexberry addon, which uses in this dummy application ' +
+          '(npm version + commit sha). ' +
+          'Click to open commit on GitHub.'
+        },
+        index: {
+          caption: 'Home',
+          title: ''
+        },
+        'c-r-m': {
+          caption: 'CRM',
+          title: 'CRM',
+          'i-i-s-c-r-mj-заявка-l': {
+            caption: 'Заявка',
+            title: ''
+          },
+          'i-i-s-c-r-mj-товары-l': {
+            caption: 'Товары',
+            title: ''
+          },
+          'i-i-s-c-r-mj-сделка-l': {
+            caption: 'Сделка',
+            title: ''
+          },
+          'i-i-s-c-r-mj-уведомление-l': {
+            caption: 'Уведомление',
+            title: ''
+          },
+          'i-i-s-c-r-mj-сотрудник-l': {
+            caption: 'Сотрудник',
+            title: ''
+          },
+          'i-i-s-c-r-mj-клиент-l': {
+            caption: 'Клиент',
+            title: ''
+          },
+          'i-i-s-c-r-mj-группа-клиент-l': {
+            caption: 'Группа клиент',
+            title: ''
+          },
+          'i-i-s-c-r-mj-событие-l': {
+            caption: 'Событие',
+            title: ''
+          }
+        }
+      }
+    },
+
+    'edit-form': {
+      'save-success-message-caption': 'Save operation succeed',
+      'save-success-message': 'Object saved',
+      'save-error-message-caption': 'Save operation failed',
+      'delete-success-message-caption': 'Delete operation succeed',
+      'delete-success-message': 'Object deleted',
+      'delete-error-message-caption': 'Delete operation failed'
+    },
+    'i-i-s-c-r-mj-группа-клиент-l': IISCRMjГруппаКлиентLForm,
+    'i-i-s-c-r-mj-заявка-l': IISCRMjЗаявкаLForm,
+    'i-i-s-c-r-mj-клиент-l': IISCRMjКлиентLForm,
+    'i-i-s-c-r-mj-сделка-l': IISCRMjСделкаLForm,
+    'i-i-s-c-r-mj-событие-l': IISCRMjСобытиеLForm,
+    'i-i-s-c-r-mj-сотрудник-l': IISCRMjСотрудникLForm,
+    'i-i-s-c-r-mj-товары-l': IISCRMjТоварыLForm,
+    'i-i-s-c-r-mj-уведомление-l': IISCRMjУведомлениеLForm,
+    'i-i-s-c-r-mj-группа-клиент-e': IISCRMjГруппаКлиентEForm,
+    'i-i-s-c-r-mj-заявка-e': IISCRMjЗаявкаEForm,
+    'i-i-s-c-r-mj-клиент-e': IISCRMjКлиентEForm,
+    'i-i-s-c-r-mj-сделка-e': IISCRMjСделкаEForm,
+    'i-i-s-c-r-mj-событие-e': IISCRMjСобытиеEForm,
+    'i-i-s-c-r-mj-сотрудник-e': IISCRMjСотрудникEForm,
+    'i-i-s-c-r-mj-товары-e': IISCRMjТоварыEForm,
+    'i-i-s-c-r-mj-уведомление-e': IISCRMjУведомлениеEForm
+  },
+
+});
+
+export default translations;

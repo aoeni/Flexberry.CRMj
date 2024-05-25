@@ -1,0 +1,318 @@
+﻿{
+  "name": "IISCRMjЗаявка",
+  "modelName": "i-i-s-c-r-mj-заявка",
+  "className": "Заявка",
+  "nameSpace": "IIS.CRMj",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаСоздания",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "колВо",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "статусЗ",
+      "type": "i-i-s-c-r-mj-статус",
+      "flexberryType": "Статус",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стоимость",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "клиент",
+      "relatedTo": "i-i-s-c-r-mj-клиент",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудник",
+      "relatedTo": "i-i-s-c-r-mj-сотрудник",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "товары",
+      "relatedTo": "i-i-s-c-r-mj-товары",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ЗаявкаE",
+      "modelName": "i-i-s-c-r-mj-заявка",
+      "attrs": [
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "статусЗ",
+          "caption": "Статус заявки",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "стоимость",
+          "caption": "Стоимость",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "колВо",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 8
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Стандарт",
+          "lookupValueField": "стандарт",
+          "relationName": "Товары",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "объем",
+              "caption": "Объем",
+              "hidden": false,
+              "index": 6
+            },
+            {
+              "name": "цена",
+              "caption": "Цена",
+              "hidden": false,
+              "index": 7
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Товары",
+          "name": "товары",
+          "relatedTo": "i-i-s-c-r-mj-товары",
+          "inverse": null
+        },
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Клиент",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "iD",
+              "caption": "ID клиента",
+              "hidden": false,
+              "index": 10
+            },
+            {
+              "name": "фИО",
+              "caption": "ФИО клиента",
+              "hidden": true,
+              "index": 11
+            },
+            {
+              "name": "телефон",
+              "caption": "Телефон клиента",
+              "hidden": false,
+              "index": 12
+            }
+          ],
+          "index": 9,
+          "type": "standard",
+          "caption": "Клиент",
+          "name": "клиент",
+          "relatedTo": "i-i-s-c-r-mj-клиент",
+          "inverse": null
+        },
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "iD",
+              "caption": "ID сотрудника",
+              "hidden": false,
+              "index": 14
+            },
+            {
+              "name": "фИО",
+              "caption": "ФИО сотрудника",
+              "hidden": true,
+              "index": 15
+            }
+          ],
+          "index": 13,
+          "type": "standard",
+          "caption": "Сотрудник",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-c-r-mj-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ЗаявкаL",
+      "modelName": "i-i-s-c-r-mj-заявка",
+      "attrs": [
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "статусЗ",
+          "caption": "Статус З",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "колВо",
+          "caption": "Кол во",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "стоимость",
+          "caption": "Стоимость",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Товары",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "стандарт",
+              "caption": "Стандарт",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Стандарт",
+          "name": "товары",
+          "relatedTo": "i-i-s-c-r-mj-товары",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Клиент",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "клиент",
+          "relatedTo": "i-i-s-c-r-mj-клиент",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 7
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-c-r-mj-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,334 @@
+﻿{
+  "name": "IISCRMjСобытие",
+  "modelName": "i-i-s-c-r-mj-событие",
+  "className": "Событие",
+  "nameSpace": "IIS.CRMj",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаСозд",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаУвед",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "соо",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "установ",
+      "type": "boolean",
+      "flexberryType": "bool",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "заявка",
+      "relatedTo": "i-i-s-c-r-mj-заявка",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сделка",
+      "relatedTo": "i-i-s-c-r-mj-сделка",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "СобытиеE",
+      "modelName": "i-i-s-c-r-mj-событие",
+      "attrs": [
+        {
+          "name": "датаСозд",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "соо",
+          "caption": "Сообщение",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "датаУвед",
+          "caption": "Дата уведомления",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "установ",
+          "caption": "Установить",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ДатаСоздания",
+          "lookupValueField": "датаСоздания",
+          "relationName": "Заявка",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "iD",
+              "caption": "ID",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "датаСоздания",
+              "caption": "Дата создания заявки",
+              "hidden": true,
+              "index": 6
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Заявка",
+          "name": "заявка",
+          "relatedTo": "i-i-s-c-r-mj-заявка",
+          "inverse": null
+        },
+        {
+          "lookupValue": "ID",
+          "lookupValueField": "iD",
+          "relationName": "Сделка",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Сделка.Заявка",
+              "belongsTo": [
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "Сделка.Заявка.Товары",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "наименование",
+                      "caption": "Наименование",
+                      "hidden": false,
+                      "index": 10
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "товары",
+                  "relatedTo": "i-i-s-c-r-mj-товары",
+                  "inverse": null
+                },
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "Сделка.Заявка.Клиент",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "фИО",
+                      "caption": "ФИО клиента",
+                      "hidden": false,
+                      "index": 13
+                    },
+                    {
+                      "name": "iD",
+                      "caption": "ID клиента",
+                      "hidden": false,
+                      "index": 16
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "клиент",
+                  "relatedTo": "i-i-s-c-r-mj-клиент",
+                  "inverse": null
+                },
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "Сделка.Заявка.Сотрудник",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "фИО",
+                      "caption": "ID сотрудника",
+                      "hidden": false,
+                      "index": 14
+                    },
+                    {
+                      "name": "iD",
+                      "caption": "ФИО сотрудника",
+                      "hidden": false,
+                      "index": 15
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "сотрудник",
+                  "relatedTo": "i-i-s-c-r-mj-сотрудник",
+                  "inverse": null
+                }
+              ],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "стоимость",
+                  "caption": "Стоимость",
+                  "hidden": false,
+                  "index": 11
+                },
+                {
+                  "name": "колВо",
+                  "caption": "Количество",
+                  "hidden": false,
+                  "index": 12
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "заявка",
+              "relatedTo": "i-i-s-c-r-mj-заявка",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "iD",
+              "caption": "ID",
+              "hidden": true,
+              "index": 8
+            },
+            {
+              "name": "статусС",
+              "caption": "Статус сделки",
+              "hidden": false,
+              "index": 9
+            }
+          ],
+          "index": 7,
+          "type": "standard",
+          "caption": "Сделка",
+          "name": "сделка",
+          "relatedTo": "i-i-s-c-r-mj-сделка",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "СобытиеL",
+      "modelName": "i-i-s-c-r-mj-событие",
+      "attrs": [
+        {
+          "name": "датаСозд",
+          "caption": "Дата созд",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "соо",
+          "caption": "Соо",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "датаУвед",
+          "caption": "Дата увед",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "установ",
+          "caption": "Установ",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Заявка",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "датаСоздания",
+              "caption": "Дата создания",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Дата создания",
+          "name": "заявка",
+          "relatedTo": "i-i-s-c-r-mj-заявка",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сделка",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "iD",
+              "caption": "ID",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ID",
+          "name": "сделка",
+          "relatedTo": "i-i-s-c-r-mj-сделка",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

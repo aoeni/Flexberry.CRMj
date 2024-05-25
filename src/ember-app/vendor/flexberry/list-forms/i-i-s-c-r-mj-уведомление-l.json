@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-уведомление-e",
+  "editForm": "i-i-s-c-r-mj-уведомление-e",
+  "external": false,
+  "caption": "Уведомление",
+  "name": "IISCRMjУведомлениеL",
+  "className": "УведомлениеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-уведомление",
+      "modelProjection": "УведомлениеL"
+    }
+  ]
+}

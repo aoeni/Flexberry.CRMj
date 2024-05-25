@@ -1,0 +1,195 @@
+<h3 class="ui header">{{t "forms.i-i-s-c-r-mj-событие-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.датаСозд-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаСозд
+      class=(if (v-get validationModel "датаСозд" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-событие-e-датаСозд=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаСозд" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.соо
+      class=(if (v-get validationModel "соо" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.соо-caption")
+      data-test-i-i-s-c-r-mj-событие-e-соо=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "соо" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.датаУвед-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаУвед
+      class=(if (v-get validationModel "датаУвед" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-событие-e-датаУвед=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаУвед" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.установ-caption"}}</label>
+    {{flexberry-checkbox
+      readonly=readonly
+      value=model.установ
+      class=(if (v-get validationModel "установ" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-событие-e-установ=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "установ" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.заявка-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.заявка
+      displayAttributeName="датаСоздания"
+      autocomplete=true
+      relationName="заявка"
+      projection="ЗаявкаL"
+      title=(t "forms.i-i-s-c-r-mj-событие-e.заявка-caption")
+      readonly=readonly
+      componentName="заявкаLookup"
+      class=(if (v-get validationModel "заявка" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-событие-e-заявка=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "заявка" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.заявка.iD
+      class=(if (v-get validationModel.заявка "iD" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.заявка.iD-caption")
+      data-test-i-i-s-c-r-mj-событие-e-заявка-iD=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.заявка "iD" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.сделка-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.сделка
+      displayAttributeName="iD"
+      autocomplete=true
+      relationName="сделка"
+      projection="СделкаL"
+      title=(t "forms.i-i-s-c-r-mj-событие-e.сделка-caption")
+      readonly=readonly
+      componentName="сделкаLookup"
+      class=(if (v-get validationModel "сделка" "isInvalid") "error")
+      data-test-i-i-s-c-r-mj-событие-e-сделка=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сделка" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-c-r-mj-событие-e-сделка-статусС="true">
+    <label>{{t "forms.i-i-s-c-r-mj-событие-e.сделка.статусС-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-c-r-mj-статус")
+      value=model.сделка.статусС
+      class=(if (v-get validationModel.сделка "статусС" "isInvalid") "error")
+      readonly=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка "статусС" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.товары.наименование
+      class=(if (v-get validationModel.сделка.заявка.товары "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.товары.наименование-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-товары-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка.товары "наименование" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.стоимость
+      class=(if (v-get validationModel.сделка.заявка "стоимость" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.стоимость-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-стоимость=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка "стоимость" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.колВо
+      class=(if (v-get validationModel.сделка.заявка "колВо" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.колВо-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-колВо=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка "колВо" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.клиент.фИО
+      class=(if (v-get validationModel.сделка.заявка.клиент "фИО" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.клиент.фИО-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-клиент-фИО=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка.клиент "фИО" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.сотрудник.фИО
+      class=(if (v-get validationModel.сделка.заявка.сотрудник "фИО" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.сотрудник.фИО-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-сотрудник-фИО=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка.сотрудник "фИО" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.сотрудник.iD
+      class=(if (v-get validationModel.сделка.заявка.сотрудник "iD" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.сотрудник.iD-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-сотрудник-iD=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка.сотрудник "iD" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сделка.заявка.клиент.iD
+      class=(if (v-get validationModel.сделка.заявка.клиент "iD" "isInvalid") "error")
+      label=(t "forms.i-i-s-c-r-mj-событие-e.сделка.заявка.клиент.iD-caption")
+      data-test-i-i-s-c-r-mj-событие-e-сделка-заявка-клиент-iD=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сделка.заявка.клиент "iD" "message")}}
+  </div>
+</form>

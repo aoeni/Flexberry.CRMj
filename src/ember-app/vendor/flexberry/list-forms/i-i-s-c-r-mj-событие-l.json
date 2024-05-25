@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-событие-e",
+  "editForm": "i-i-s-c-r-mj-событие-e",
+  "external": false,
+  "caption": "Событие",
+  "name": "IISCRMjСобытиеL",
+  "className": "СобытиеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-событие",
+      "modelProjection": "СобытиеL"
+    }
+  ]
+}

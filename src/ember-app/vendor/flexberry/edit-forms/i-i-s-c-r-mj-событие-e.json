@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Заявка",
+      "projection": "ЗаявкаL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Сделка",
+      "projection": "СделкаL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Событие",
+  "name": "IISCRMjСобытиеE",
+  "className": "СобытиеE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-событие",
+      "modelProjection": "СобытиеE"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Заявка",
+      "projection": "ЗаявкаL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Сделка",
+  "name": "IISCRMjСделкаE",
+  "className": "СделкаE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-сделка",
+      "modelProjection": "СделкаE"
+    }
+  ]
+}

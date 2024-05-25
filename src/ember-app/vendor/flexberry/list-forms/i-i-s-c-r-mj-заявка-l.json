@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-заявка-e",
+  "editForm": "i-i-s-c-r-mj-заявка-e",
+  "external": false,
+  "caption": "Заявка",
+  "name": "IISCRMjЗаявкаL",
+  "className": "ЗаявкаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-заявка",
+      "modelProjection": "ЗаявкаL"
+    }
+  ]
+}

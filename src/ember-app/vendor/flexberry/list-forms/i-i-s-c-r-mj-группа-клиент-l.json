@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-группа-клиент-e",
+  "editForm": "i-i-s-c-r-mj-группа-клиент-e",
+  "external": false,
+  "caption": "Группа клиент",
+  "name": "IISCRMjГруппаКлиентL",
+  "className": "ГруппаКлиентL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-группа-клиент",
+      "modelProjection": "ГруппаКлиентL"
+    }
+  ]
+}

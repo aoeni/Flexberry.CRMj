@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-c-r-mj-сделка-e",
+  "editForm": "i-i-s-c-r-mj-сделка-e",
+  "external": false,
+  "caption": "Сделка",
+  "name": "IISCRMjСделкаL",
+  "className": "СделкаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-c-r-mj-сделка",
+      "modelProjection": "СделкаL"
+    }
+  ]
+}
